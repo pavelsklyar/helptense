@@ -28,18 +28,27 @@ class App
     public function run()
     {
         if (count($this->path) < 5) {
-            $controllerName = empty($path[1]) ? "MainController" : $path[1] . "Controller";
-            $this->controllerName = 'controllers\\' . $controllerName;
 
-            if (!class_exists($this->controllerName)) {
-                $this->controller = new ErrorController($this->page);
-                $this->controller->pageNotFound();
+            if (count($this->path) <= 3) {
+                $this->controllerName = 'controllers\\MainController';
 
-                return;
+                $this->controller = new $this->controllerName($this->page);
+                $this->action = empty($this->path[1]) ? "index" : $this->path[1];
             }
+            else {
+                $controllerName = empty($this->path[1]) ? "MainController" : $this->path[1] . "Controller";
+                $this->controllerName = 'controllers\\' . $controllerName;
 
-            $this->controller = new $this->controllerName($this->page);
-            $this->action = empty($path[2]) ? "index" : $path[2];
+                if (!class_exists($this->controllerName)) {
+                    $this->controller = new ErrorController($this->page);
+                    $this->controller->pageNotFound();
+
+                    return;
+                }
+
+                $this->controller = new $this->controllerName($this->page);
+                $this->action = empty($this->path[2]) ? "index" : $this->path[2];
+            }
 
             if (!method_exists($this->controller, $this->action)) {
                 $this->controller = new ErrorController($this->page);

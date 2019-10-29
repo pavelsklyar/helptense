@@ -2,28 +2,30 @@
 
 namespace controllers;
 
+use base\interfaces\Controller;
 use base\Page;
 use base\View;
 
-class MainController
+class MainController implements Controller
 {
-    /**
-     * @var $page Page
-     */
     private $page;
 
     /**
      * MainController constructor.
-     * @param Page $page
+     * @param $page Page
      */
     public function __construct(Page &$page)
     {
         $this->page = $page;
     }
 
-
     public function index()
     {
         $view = new View("site/index", $this->page);
+    }
+
+    public function tense()
+    {
+        $view = new View("site/tense", $this->page);
     }
 }
