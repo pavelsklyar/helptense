@@ -1,0 +1,9 @@
+@media all and (max-width: 800px) {
+    .menu-desktop-li{
+        display: none;
+    }
+    .menu-mobile{
+        display: flex;
+    }
+}
+

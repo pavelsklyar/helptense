@@ -20,6 +20,3 @@ $this->metaTags = "hello world, наш сайт, тупое говно, тупо
     <input name="s" placeholder="Введите глагол..." type="search">
     <button type="submit"><img class="search" src="img/search_w.png"></button>
 </form>
-
-
-<img class="logo_back" src="img/Logo_back.png">
