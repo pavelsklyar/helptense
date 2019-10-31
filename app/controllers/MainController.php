@@ -1,10 +1,10 @@
 <?php
 
-namespace controllers;
+namespace app\controllers;
 
-use base\interfaces\Controller;
-use base\Page;
-use base\View;
+use app\base\interfaces\Controller;
+use app\base\Page;
+use app\base\View;
 
 class MainController implements Controller
 {
@@ -22,6 +22,13 @@ class MainController implements Controller
     public function index()
     {
         $view = new View("site/index", $this->page);
+    }
+
+    public function search()
+    {
+        $data = $this->page->getGet();
+
+        $view = new View("site/search", $this->page);
     }
 
     public function tense()

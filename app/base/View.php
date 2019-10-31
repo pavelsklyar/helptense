@@ -1,6 +1,6 @@
 <?php
 
-namespace base;
+namespace app\base;
 
 class View
 {
@@ -52,10 +52,10 @@ class View
                 $param = $matches[1][0];
                 $this->page->setDescription($param);
             }
-            if (stristr($setting, 'meta')) {
+            if (stristr($setting, 'keywords')) {
                 preg_match_all('~"([^"]*)"~u', $setting, $matches);
                 $param = $matches[1][0];
-                $this->page->setMetaTags($param);
+                $this->page->setKeywords($param);
             }
         }
     }

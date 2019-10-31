@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @var $this \base\Page;
+ * @var $this \app\base\Page;
  * @var $info;
  */
 
 $this->title = "Заголовок сайта";
 $this->description = "Описание нашего сайта";
-$this->metaTags = "hello world, наш сайт, тупое говно, тупого говна";
+$this->keywords = "hello world, наш сайт, тупое говно, тупого говна";
 
 ?>
 

@@ -1,6 +1,8 @@
 <?php
 
-namespace base;
+namespace app\base;
+
+use app\security\Security;
 
 class Page
 {
@@ -9,7 +11,7 @@ class Page
 
     private $title;
     private $description;
-    private $metaTags;
+    private $keywords;
 
     private $header;
     private $footer;
@@ -17,65 +19,25 @@ class Page
     private $data;
     private $content;
 
+    private $get;
+    private $post;
+
     public function __construct()
     {
         $this->meta = LAYOUTS . "head/meta.php";
         $this->styles = LAYOUTS . "head/styles.php";
         $this->header = LAYOUTS . "body/header.php";
         $this->footer = LAYOUTS . "body/footer.php";
+
+        if (!empty($_GET))
+            $this->get = Security::protectData($_GET);
+        if (!empty($_POST))
+            $this->post = Security::protectData($_POST);
     }
 
     public function generate()
     {
         $generator = new Generate($this);
-    }
-
-    /**
-     * @param string $meta
-     */
-    public function setMeta($meta)
-    {
-        $this->meta = $meta;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * @param mixed $metaTags
-     */
-    public function setMetaTags($metaTags)
-    {
-        $this->metaTags = $metaTags;
-    }
-
-    /**
-     * @param mixed $data
-     */
-    public function setData($data)
-    {
-        $this->data = $data;
-    }
-
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
     }
 
     /**
@@ -92,30 +54,6 @@ class Page
     public function getStyles()
     {
         return $this->styles;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getMetaTags()
-    {
-        return $this->metaTags;
     }
 
     /**
@@ -137,9 +75,65 @@ class Page
     /**
      * @return mixed
      */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKeywords()
+    {
+        return $this->keywords;
+    }
+
+    /**
+     * @param $keywords
+     */
+    public function setKeywords($keywords)
+    {
+        $this->keywords = $keywords;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getData()
     {
         return $this->data;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
     }
 
     /**
@@ -150,5 +144,43 @@ class Page
         return $this->content;
     }
 
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
 
+    /**
+     * @return array
+     */
+    public function getGet()
+    {
+        return $this->get;
+    }
+
+    /**
+     * @param array $get
+     */
+    public function setGet($get)
+    {
+        $this->get = $get;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    /**
+     * @param array $post
+     */
+    public function setPost($post)
+    {
+        $this->post = $post;
+    }
 }

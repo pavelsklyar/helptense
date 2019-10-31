@@ -2,8 +2,9 @@
 
 namespace app;
 
-use base\Path;
-use controllers\common\ErrorController;
+use app\base\Page;
+use app\base\Path;
+use app\controllers\common\ErrorController;
 
 class App
 {
@@ -16,7 +17,7 @@ class App
 
     /**
      * Routing constructor.
-     * @param $page \base\Page;
+     * @param $page Page;
      */
     public function __construct(&$page)
     {
@@ -30,14 +31,14 @@ class App
         if (count($this->path) < 5) {
 
             if (count($this->path) <= 3) {
-                $this->controllerName = 'controllers\\MainController';
+                $this->controllerName = 'app\\controllers\\MainController';
 
                 $this->controller = new $this->controllerName($this->page);
                 $this->action = empty($this->path[1]) ? "index" : $this->path[1];
             }
             else {
                 $controllerName = empty($this->path[1]) ? "MainController" : $this->path[1] . "Controller";
-                $this->controllerName = 'controllers\\' . $controllerName;
+                $this->controllerName = 'app\\controllers\\' . $controllerName;
 
                 if (!class_exists($this->controllerName)) {
                     $this->controller = new ErrorController($this->page);

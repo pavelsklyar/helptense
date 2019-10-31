@@ -1,10 +1,10 @@
 <?php
 
 
-namespace base\interfaces;
+namespace app\base\interfaces;
 
 
-use base\Page;
+use app\base\Page;
 
 interface Controller
 {

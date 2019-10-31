@@ -1,6 +1,6 @@
 <?php
 
-namespace base;
+namespace app\base;
 
 class Path
 {

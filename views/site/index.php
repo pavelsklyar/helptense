@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @var $this \base\Page;
+ * @var $this \app\base\Page;
  * @var $info;
  */
 
 $this->title = "Заголовок сайта";
 $this->description = "Описание нашего сайта";
-$this->metaTags = "hello world, наш сайт, тупое говно, тупого говна";
+$this->keywords = "hello world, наш сайт, тупое говно, тупого говна";
 
 ?>
 
@@ -16,10 +16,10 @@ $this->metaTags = "hello world, наш сайт, тупое говно, тупо
         временем в настоящем</a>
 </div>
 
-<form action="" method="get">
-    <input name="s" placeholder="Введите глагол..." type="search">
-    <button type="submit"><img class="search" src="img/search_w.png"></button>
+<form action="/search/" method="get">
+    <input name="verb" placeholder="Введите глагол..." type="search">
+    <button type="submit"><img class="search" src="/img/search_w.png"></button>
 </form>
 
 
-<img class="logo_back" src="img/Logo_back.png">
+<img class="logo_back" src="/img/Logo_back.png">

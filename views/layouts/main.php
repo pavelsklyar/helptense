@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $page \base\Page;
+ * @var $page \app\base\Page;
  */
 ?>
 
@@ -12,7 +12,7 @@
 
     <title><?= $page->getTitle(); ?></title>
     <meta name="description" content="<?= $page->getDescription(); ?>">
-    <meta name="keywords" content="<?= $page->getMetaTags(); ?>">
+    <meta name="keywords" content="<?= $page->getKeywords(); ?>">
 </head>
 <body>
     <div class="header">

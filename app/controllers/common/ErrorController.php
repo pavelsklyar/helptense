@@ -1,9 +1,9 @@
 <?php
 
-namespace controllers\common;
+namespace app\controllers\common;
 
-use base\Page;
-use base\View;
+use app\base\Page;
+use app\base\View;
 
 class ErrorController
 {
