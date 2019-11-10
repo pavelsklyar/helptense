@@ -26,8 +26,10 @@ class SearchController implements Controller
         $verb = $get['verb'];
 
         $this->component = new VerbsComponent();
-        $this->model = $this->component->getVerb($verb);
 
-        $view = new View("site/verb", $this->page, ['model' => $this->model]);
+        if ($this->model = $this->component->getVerb($verb))
+            $view = new View("site/verb", $this->page, ['model' => $this->model]);
+        else
+            $view = new View("errors/verb", $this->page, ['model' => $this->model]);
     }
 }

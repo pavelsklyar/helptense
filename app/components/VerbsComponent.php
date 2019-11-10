@@ -13,9 +13,12 @@ class VerbsComponent implements Component
     public function getVerb($verb)
     {
         $table = new VerbsTable();
-        $v = $table->getBySeveralConditions(['first_form' => $verb, 'second_form' => $verb, 'third_form' => $verb]);
+        $v = $table->getByCondition('first_form', $verb);
 
-        $model = new Verb($v[0]['first_form'], $v[0]['second_form'], $v[0]['third_form'], $v[0]['translate'], $v[0]['transcription'], '', '', '', '', '', '');
+        if ($v)
+            $model = new Verb($v[0]['first_form'], $v[0]['second_form'], $v[0]['third_form'], $v[0]['translate'], $v[0]['transcription'], '', '', '', '', '', '');
+        else
+            $model = null;
 
         return $model;
     }

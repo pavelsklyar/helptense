@@ -50,7 +50,7 @@ class Requests
 
     public static function getByCondition($tableName, $condition, $value)
     {
-        $sql = "SELECT * FROM `$tableName` WHERE `$condition` LIKE '%$value%'";
+        $sql = "SELECT * FROM `$tableName` WHERE `$condition` LIKE '$value'";
 
         return $sql;
     }
@@ -64,7 +64,7 @@ class Requests
             if ($count)
                 $sql .= " OR ";
 
-            $sql .= "`$condition` LIKE '%$value%'";
+            $sql .= "`$condition` LIKE '$value'";
             $count = 1;
         }
 
