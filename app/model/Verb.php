@@ -12,47 +12,44 @@ class Verb implements Model
     private $firstForm;
     private $secondForm;
     private $thirdForm;
-    private $gerund;
+    private $translate;
+    private $transcription;
 
     private $firstFormExample;
     private $secondFormExample;
     private $thirdFormExample;
-    private $gerundExample;
 
     private $firstFormTranslate;
     private $secondFormTranslate;
     private $thirdFormTranslate;
-    private $gerundTranslate;
 
     /**
      * Verb constructor.
      * @param $firstForm string
      * @param $secondForm string
      * @param $thirdForm string
-     * @param $gerund string
+     * @param $translate string
+     * @param $transcription
      * @param $firstFormExample string
      * @param $secondFormExample string
      * @param $thirdFormExample string
-     * @param $gerundExample string
      * @param $firstFormTranslate string
      * @param $secondFormTranslate string
      * @param $thirdFormTranslate string
-     * @param $gerundTranslate string
      */
-    public function __construct($firstForm, $secondForm, $thirdForm, $gerund, $firstFormExample, $secondFormExample, $thirdFormExample, $gerundExample, $firstFormTranslate, $secondFormTranslate, $thirdFormTranslate, $gerundTranslate)
+    public function __construct($firstForm, $secondForm, $thirdForm, $translate, $transcription, $firstFormExample, $secondFormExample, $thirdFormExample, $firstFormTranslate, $secondFormTranslate, $thirdFormTranslate)
     {
         $this->firstForm = $firstForm;
         $this->secondForm = $secondForm;
         $this->thirdForm = $thirdForm;
-        $this->gerund = $gerund;
+        $this->translate = $translate;
+        $this->transcription = $transcription;
         $this->firstFormExample = $firstFormExample;
         $this->secondFormExample = $secondFormExample;
         $this->thirdFormExample = $thirdFormExample;
-        $this->gerundExample = $gerundExample;
         $this->firstFormTranslate = $firstFormTranslate;
         $this->secondFormTranslate = $secondFormTranslate;
         $this->thirdFormTranslate = $thirdFormTranslate;
-        $this->gerundTranslate = $gerundTranslate;
     }
 
     /**
@@ -82,9 +79,17 @@ class Verb implements Model
     /**
      * @return string
      */
-    public function getGerund()
+    public function getTranslate()
     {
-        return $this->gerund;
+        return $this->translate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTranscription()
+    {
+        return $this->transcription;
     }
 
     /**
@@ -114,14 +119,6 @@ class Verb implements Model
     /**
      * @return string
      */
-    public function getGerundExample()
-    {
-        return $this->gerundExample;
-    }
-
-    /**
-     * @return string
-     */
     public function getFirstFormTranslate()
     {
         return $this->firstFormTranslate;
@@ -141,14 +138,6 @@ class Verb implements Model
     public function getThirdFormTranslate()
     {
         return $this->thirdFormTranslate;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGerundTranslate()
-    {
-        return $this->gerundTranslate;
     }
 
     public function save()

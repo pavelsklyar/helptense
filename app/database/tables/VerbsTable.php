@@ -6,9 +6,13 @@ namespace app\database\tables;
 
 use app\model\Verb;
 use base\interfaces\Table;
+use Database;
+use Requests;
 
 class VerbsTable implements Table
 {
+
+    private $tableName = "verbs";
 
     /**
      * @param Verb $object
@@ -63,6 +67,23 @@ class VerbsTable implements Table
      */
     public function getByCondition($condition, $conditionValue): array
     {
-        // TODO: Implement getByCondition() method.
+        $db = new Database();
+
+        $sql = Requests::getByCondition($this->tableName, $condition, $conditionValue);
+
+        return $db->getQueryArray($sql);
+    }
+
+    /**
+     * @param array $conditions
+     * @return array|null
+     */
+    public function getBySeveralConditions($conditions)
+    {
+        $db = new Database();
+
+        $sql = Requests::getBySeveralConditions($this->tableName, $conditions);
+
+        return $db->getQueryArray($sql);
     }
 }

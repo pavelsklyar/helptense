@@ -15,19 +15,22 @@
     <meta name="keywords" content="<?= $page->getKeywords(); ?>">
 </head>
 <body>
-    <div class="header">
-        <?php include $page->getHeader(); ?>
-    </div>
-    <div class="content">
-        <?php
-            if (!empty($page->getData()))
-                extract($page->getData());
+    <div class="body">
+        <div class="header">
+            <?php include $page->getHeader(); ?>
+        </div>
+        <div class="content">
+            <?php
+                if (!empty($page->getData()))
+                    extract($page->getData());
 
-            include $page->getContent();
-        ?>
-    </div>
-    <div class="footer">
-        <?php include $page->getFooter(); ?>
+                if (!empty($page->getContent()))
+                    include $page->getContent();
+            ?>
+        </div>
+        <div class="footer">
+            <?php include $page->getFooter(); ?>
+        </div>
     </div>
 </body>
 </html>

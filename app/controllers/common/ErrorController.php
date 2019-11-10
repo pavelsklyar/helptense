@@ -18,8 +18,6 @@ class ErrorController
         $this->page = $page;
     }
 
-
-
     public function pageNotFound()
     {
         $view = new View('errors/404', $this->page);

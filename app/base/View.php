@@ -8,6 +8,8 @@ class View
     private $render = false;
     private $page;
 
+    private $pageNotFound = VIEWS . "errors/404.php";
+
     /**
      * View constructor.
      * @param $template
@@ -23,7 +25,7 @@ class View
             $this->render = $file;
         }
         else {
-            echo "template not found!";
+            $this->render = $this->pageNotFound;
             return;
         }
 

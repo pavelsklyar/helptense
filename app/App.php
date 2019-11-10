@@ -30,7 +30,7 @@ class App
     {
         if (count($this->path) < 5) {
 
-            if (count($this->path) <= 3) {
+            if (count($this->path) < 3) {
                 $this->controllerName = 'app\\controllers\\MainController';
 
                 $this->controller = new $this->controllerName($this->page);

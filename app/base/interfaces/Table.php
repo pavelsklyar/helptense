@@ -43,6 +43,4 @@ interface Table
      * @return array
      */
     public function getByCondition($condition, $conditionValue) : array ;
-
-
 }
