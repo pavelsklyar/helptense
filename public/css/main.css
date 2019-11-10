@@ -152,6 +152,8 @@ ul li ul:hover {
     margin-top: 80px;
     margin-bottom: 50px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .sign-a {
@@ -303,4 +305,23 @@ form button {
     color: #f0f1ef;
     border: 1px solid #5276a4;
     padding: 10px;
+}
+
+
+.sign-p-not-up {
+    font-size: 15pt;
+    text-transform: uppercase;
+    color: #e58281;
+    margin-bottom: 30px;
+}
+
+.sign-p-not-down{
+    font-size: 13pt;
+    color: #5276a4;
+    margin-bottom: 10px;
+}
+
+.verb-found{
+    font-size: 13pt;
+    color: #5276a4;
 }
