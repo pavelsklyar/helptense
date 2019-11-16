@@ -6,12 +6,13 @@ use app\security\Security;
 
 class Page
 {
+    private $metrika;
     private $meta;
     private $styles;
 
-    private $title;
-    private $description;
-    private $keywords;
+    public $title;
+    public $description;
+    public $keywords;
 
     private $header;
     private $footer;
@@ -24,6 +25,7 @@ class Page
 
     public function __construct()
     {
+        $this->metrika = LAYOUTS . "head/metrika.php";
         $this->meta = LAYOUTS . "head/meta.php";
         $this->styles = LAYOUTS . "head/styles.php";
         $this->header = LAYOUTS . "body/header.php";
@@ -38,6 +40,14 @@ class Page
     public function generate()
     {
         $generator = new Generate($this);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetrika(): string
+    {
+        return $this->metrika;
     }
 
     /**

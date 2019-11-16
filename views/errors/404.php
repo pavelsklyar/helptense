@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $page \app\base\Page;
+ */
+
+$page->title = "Такой страницы не существует! - HelpTense";
+
+?>
+
 <div class="content">
 
 <div align="center" class="signature">

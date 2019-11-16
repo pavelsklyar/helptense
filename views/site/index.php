@@ -1,22 +1,21 @@
 <?php
 
 /**
- * @var $this \app\base\Page;
- * @var $info;
+ * @var $page \app\base\Page;
  */
 
-$this->title = "Заголовок сайта";
-$this->description = "Описание нашего сайта";
-$this->keywords = "hello world, наш сайт, тупое говно, тупого говна";
+$page->title = "HelpTense - быстро поможет с временами";
+$page->description = "HelpTense - сайт, который поможет разобраться в английских временах и узнать формы глаголов.";
+$page->keywords = "неправильные глаголы, английские глаголы";
 
 ?>
 
-<div class="signature">
+<div class="signature-main">
     <p class="sign-a">Быстро поможет с прошедшем
         временем в настоящем</p>
 </div>
 
-<form action="/search/" method="get">
+<form action="/search/verb/" method="post">
     <input name="verb" placeholder="Введите глагол..." type="search">
     <button type="submit"><img class="search" src="/img/search_w.png"></button>
 </form>

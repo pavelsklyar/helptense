@@ -11,8 +11,16 @@ use Requests;
 
 class VerbsTable implements Table
 {
-
     private $tableName = "verbs";
+    private $database;
+
+    /**
+     * VerbsTable constructor.
+     */
+    public function __construct()
+    {
+        $this->database = new Database();
+    }
 
     /**
      * @param Verb $object
@@ -60,6 +68,13 @@ class VerbsTable implements Table
         // TODO: Implement getAll() method.
     }
 
+    public function getAllVerbForms()
+    {
+        $sql = "SELECT `first_form`, `second_form`, `third_form`, `translate`, `transcription` FROM `{$this->tableName}` GROUP BY `first_form`";
+
+        return $this->database->getQueryArray($sql);
+    }
+
     /**
      * @param string $condition
      * @param string|number $conditionValue
@@ -67,11 +82,9 @@ class VerbsTable implements Table
      */
     public function getByCondition($condition, $conditionValue): array
     {
-        $db = new Database();
-
         $sql = Requests::getByCondition($this->tableName, $condition, $conditionValue);
 
-        return $db->getQueryArray($sql);
+        return $this->database->getQueryArray($sql);
     }
 
     /**
@@ -80,10 +93,8 @@ class VerbsTable implements Table
      */
     public function getBySeveralConditions($conditions)
     {
-        $db = new Database();
-
         $sql = Requests::getBySeveralConditions($this->tableName, $conditions);
 
-        return $db->getQueryArray($sql);
+        return $this->database->getQueryArray($sql);
     }
 }

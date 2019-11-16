@@ -1,6 +1,6 @@
 * {
     margin: 0px;
-    padding: 0px;  
+    padding: 0px;
 }
 
 body {
@@ -12,7 +12,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
 }
 
 .header {
@@ -34,6 +33,7 @@ body {
     width: 200px;
     padding-left: 20px;
     padding-top: 5px;
+
 }
 
 .menu{
@@ -45,7 +45,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
- 
+
     width: 100%;
     padding-right: 20px;
     flex-wrap: nowrap;
@@ -122,37 +122,42 @@ ul li ul:hover {
     text-decoration: none;
     color: #f0f1ef;
     align-items: center;
-    padding: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
 }
 
 .dropdown-a:hover{
     color:#5276a4;
 }
 
-.dropdown-a:hover .menu-a,
-.dropdown-a:hover .menu-a:hover{
-    color:#5276a4;
-}
-
 .content{
     flex: 1 0 auto;
     padding: 0px 20px;
-    background-image: url(/img/Logo_backT4.png);
+    background-image: url(../img/Logo_backT4.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 70%;
     background-size: 90%;
     background-origin: padding-box;
-    
+
 }
 
 .signature{
-    width: 100%;
     margin-top: 80px;
     margin-bottom: 50px;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.signature-main{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .sign-a {
@@ -176,26 +181,26 @@ form {
 }
 
 form input {
-  width: 100%;
-  height: 42px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 2px solid #5276a4;
-  outline: none;
-  background: #f0f1ef;
-  color: #9E9C9C;
-  font-size: 10pt;
-  -webkit-appearance: textfield;
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #5276a4;
+    outline: none;
+    background: #f0f1ef;
+    color: #9E9C9C;
+    font-size: 10pt;
+    -webkit-appearance: textfield;
 }
 
 form button {
-  top: 0;
-  right: 0px;
-  width: 50px;
-  height: 42px;
-  border: none;
-  background: #5276a4;
-  border-radius: 0 5px 5px 0;
+    top: 0;
+    right: 0px;
+    width: 50px;
+    height: 42px;
+    border: none;
+    background: #5276a4;
+    border-radius: 0 5px 5px 0;
 }
 
 .search{
@@ -205,7 +210,7 @@ form button {
 
 .footer{
     width: 100%;
-    
+
     bottom: 0;
     background-color: #5276a4;
     align-self: end;
@@ -266,16 +271,22 @@ form button {
 .text{
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
-.text h3{
-    color: #5276a4;
+.text-space{
+    margin-bottom: 15px;
 }
 
 .text-main{
     color: #f0f1ef;
     background-color: #5276a4;
-    padding: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.text h3{
+    color: #5276a4;
 }
 
 .sign-verb{
@@ -306,7 +317,6 @@ form button {
     padding: 10px;
 }
 
-
 .sign-p-not-up {
     font-size: 15pt;
     text-transform: uppercase;
@@ -323,4 +333,8 @@ form button {
 .verb-found{
     font-size: 13pt;
     color: #5276a4;
+}
+
+.mail-link {
+    color: #f0f1ef;
 }

@@ -7,6 +7,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
+    <?php //include $page->getMetrika(); ?>
     <?php include $page->getMeta(); ?>
     <?php include $page->getStyles(); ?>
 
@@ -25,7 +26,7 @@
                     extract($page->getData());
 
                 if (!empty($page->getContent()))
-                    include $page->getContent();
+                    echo $page->getContent();
             ?>
         </div>
         <div class="footer">

@@ -15,45 +15,50 @@ class Verb implements Model
     private $translate;
     private $transcription;
 
-    private $firstFormExample;
-    private $secondFormExample;
-    private $thirdFormExample;
+    private $firstFormExampleSingle;
+    private $firstFormExampleMultiple;
+    private $firstFormExampleNegative;
 
-    private $firstFormTranslate;
-    private $secondFormTranslate;
-    private $thirdFormTranslate;
+    private $secondFormExampleSingle;
+    private $secondFormExampleMultiple;
+    private $secondFormExampleNegative;
+
+    private $thirdFormExampleSingle;
+    private $thirdFormExampleMultiple;
+    private $thirdFormExampleNegative;
 
     /**
      * Verb constructor.
-     * @param $firstForm string
-     * @param $secondForm string
-     * @param $thirdForm string
-     * @param $translate string
+     * @param $firstForm
+     * @param $secondForm
+     * @param $thirdForm
+     * @param $translate
      * @param $transcription
-     * @param $firstFormExample string
-     * @param $secondFormExample string
-     * @param $thirdFormExample string
-     * @param $firstFormTranslate string
-     * @param $secondFormTranslate string
-     * @param $thirdFormTranslate string
      */
-    public function __construct($firstForm, $secondForm, $thirdForm, $translate, $transcription, $firstFormExample, $secondFormExample, $thirdFormExample, $firstFormTranslate, $secondFormTranslate, $thirdFormTranslate)
+    public function __construct($firstForm, $secondForm, $thirdForm, $translate, $transcription)
     {
         $this->firstForm = $firstForm;
         $this->secondForm = $secondForm;
         $this->thirdForm = $thirdForm;
         $this->translate = $translate;
         $this->transcription = $transcription;
-        $this->firstFormExample = $firstFormExample;
-        $this->secondFormExample = $secondFormExample;
-        $this->thirdFormExample = $thirdFormExample;
-        $this->firstFormTranslate = $firstFormTranslate;
-        $this->secondFormTranslate = $secondFormTranslate;
-        $this->thirdFormTranslate = $thirdFormTranslate;
+    }
+
+    public function setExamples($firstFormExampleSingle, $firstFormExampleMultiple, $firstFormExampleNegative, $secondFormExampleSingle, $secondFormExampleMultiple, $secondFormExampleNegative, $thirdFormExampleSingle, $thirdFormExampleMultiple, $thirdFormExampleNegative)
+    {
+        $this->firstFormExampleSingle = $firstFormExampleSingle;
+        $this->firstFormExampleMultiple = $firstFormExampleMultiple;
+        $this->firstFormExampleNegative = $firstFormExampleNegative;
+        $this->secondFormExampleSingle = $secondFormExampleSingle;
+        $this->secondFormExampleMultiple = $secondFormExampleMultiple;
+        $this->secondFormExampleNegative = $secondFormExampleNegative;
+        $this->thirdFormExampleSingle = $thirdFormExampleSingle;
+        $this->thirdFormExampleMultiple = $thirdFormExampleMultiple;
+        $this->thirdFormExampleNegative = $thirdFormExampleNegative;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getFirstForm()
     {
@@ -61,7 +66,7 @@ class Verb implements Model
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getSecondForm()
     {
@@ -69,7 +74,7 @@ class Verb implements Model
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getThirdForm()
     {
@@ -77,7 +82,7 @@ class Verb implements Model
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getTranslate()
     {
@@ -93,56 +98,86 @@ class Verb implements Model
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getFirstFormExample()
+    public function getFirstFormExampleSingle()
     {
-        return $this->firstFormExample;
+        return $this->firstFormExampleSingle;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getSecondFormExample()
+    public function getFirstFormExampleMultiple()
     {
-        return $this->secondFormExample;
+        return $this->firstFormExampleMultiple;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getThirdFormExample()
+    public function getFirstFormExampleNegative()
     {
-        return $this->thirdFormExample;
+        return $this->firstFormExampleNegative;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getFirstFormTranslate()
+    public function getSecondFormExampleSingle()
     {
-        return $this->firstFormTranslate;
+        return $this->secondFormExampleSingle;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getSecondFormTranslate()
+    public function getSecondFormExampleMultiple()
     {
-        return $this->secondFormTranslate;
+        return $this->secondFormExampleMultiple;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getThirdFormTranslate()
+    public function getSecondFormExampleNegative()
     {
-        return $this->thirdFormTranslate;
+        return $this->secondFormExampleNegative;
     }
 
-    public function save()
+    /**
+     * @return mixed
+     */
+    public function getThirdFormExampleSingle()
     {
-        $table = new VerbsTable();
-        $table->insert($this);
+        return $this->thirdFormExampleSingle;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getThirdFormExampleMultiple()
+    {
+        return $this->thirdFormExampleMultiple;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getThirdFormExampleNegative()
+    {
+        return $this->thirdFormExampleNegative;
+    }
+
+    /**
+     * @param $postData
+     * @return Verb
+     */
+    public static function load($postData)
+    {
+        $obj = new self();
+        // ...
+
+        return $obj;
     }
 }

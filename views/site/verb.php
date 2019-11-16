@@ -1,8 +1,14 @@
 <?php
 
 /**
+ * @var $page \app\base\Page;
  * @var $model \app\model\Verb;
  */
+
+
+$page->title = ucfirst($model->getFirstForm()) . " - HelpTense";
+$page->description = "HelpTense - сайт, который поможет разобраться в английских временах и узнать формы глаголов.";
+$page->keywords = "неправильные глаголы, английские глаголы";
 
 ?>
 
@@ -34,37 +40,46 @@
             <tr>
                 <th>3 лицо ед.ч.</th>
                 <td align="center">
-                    He <b class="color-text">does</b> exercises every morning
+                    <?= $model->getFirstFormExampleSingle(); ?>
+<!--                    He <b class="color-text">does</b> exercises every morning-->
                 </td>
                 <td align="center">
-                    He <b class="color-text">did</b> exercises yesterday morning
+                    <?= $model->getSecondFormExampleSingle(); ?>
+<!--                    He <b class="color-text">did</b> exercises yesterday morning-->
                 </td>
                 <td align="center">
-                    He has already <b class="color-text">done</b> exercises
+                    <?= $model->getThirdFormExampleSingle(); ?>
+<!--                    He has already <b class="color-text">done</b> exercises-->
                 </td>
             </tr>
             <tr>
                 <th>1 лицо, 2 лицо, 3 лицо мн.ч.</th>
                 <td align="center">
-                    We usually <b class="color-text">do</b> our homework
+                    <?= $model->getFirstFormExampleMultiple(); ?>
+<!--                    We usually <b class="color-text">do</b> our homework-->
                 </td>
                 <td align="center">
-                    We <b class="color-text">did</b> our homework last weekend
+                    <?= $model->getSecondFormExampleMultiple(); ?>
+<!--                    We <b class="color-text">did</b> our homework last weekend-->
                 </td>
                 <td align="center">
-                    We have already <b class="color-text">done</b> our homework yet
+                    <?= $model->getThirdFormExampleMultiple() ?>
+<!--                    We have already <b class="color-text">done</b> our homework yet-->
                 </td>
             </tr>
             <tr>
                 <th>Отрицание</th>
                 <td align="center">
-                    She doesn't <b class="color-text">do</b> a job every day
+                    <?= $model->getFirstFormExampleNegative(); ?>
+<!--                    She doesn't <b class="color-text">do</b> a job every day-->
                 </td>
                 <td align="center">
-                    She didn't <b class="color-text">do</b> a job last month
+                    <?= $model->getSecondFormExampleNegative(); ?>
+<!--                    She didn't <b class="color-text">do</b> a job last month-->
                 </td>
                 <td align="center">
-                    She has't already <b class="color-text">done</b> a job
+                    <?= $model->getThirdFormExampleNegative(); ?>
+<!--                    She has't already <b class="color-text">done</b> a job-->
                 </td>
             </tr>
            

@@ -14,22 +14,17 @@ class SearchController implements Controller
     private $page;
     private $component;
     private $model;
+    private $params;
 
-    public function __construct(Page &$page)
+    public function __construct(Page &$page, $params)
     {
         $this->page = $page;
+        $this->params = $params;
     }
 
-    public function index()
+    public function verb()
     {
-        $get = $this->page->getGet();
-        $verb = $get['verb'];
-
-        $this->component = new VerbsComponent();
-
-        if ($this->model = $this->component->getVerb($verb))
-            $view = new View("site/verb", $this->page, ['model' => $this->model]);
-        else
-            $view = new View("errors/verb", $this->page, ['model' => $this->model]);
+        $verb = $this->page->getPost()['verb'];
+        header("Location: /verb/{$verb}/");
     }
 }

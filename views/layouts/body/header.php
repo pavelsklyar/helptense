@@ -1,5 +1,5 @@
 <div class="main">
-    <a href="index.html"><img class="logo" src="img/Logo.png"></a>
+    <a href="/"><img class="logo" src="/img/Logo.png"></a>
     <div class="menu">
         <ul class="menu-ul">
             <li class="menu-desktop-li">

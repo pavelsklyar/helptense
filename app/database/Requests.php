@@ -50,7 +50,7 @@ class Requests
 
     public static function getByCondition($tableName, $condition, $value)
     {
-        $sql = "SELECT * FROM `$tableName` WHERE `$condition` LIKE '$value'";
+        $sql = "SELECT * FROM `$tableName` WHERE `$condition` = '$value'";
 
         return $sql;
     }

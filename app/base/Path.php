@@ -30,6 +30,14 @@ class Path
     }
 
     /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
      * @return array
      */
     public function getPath()

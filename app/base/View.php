@@ -29,46 +29,30 @@ class View
             return;
         }
 
-        foreach ($dataArray as $variable => $value) {
-            $this->data[$variable] = $value;
-        }
+//        foreach ($dataArray as $variable => $value) {
+//            $this->data[$variable] = $value;
+//        }
+//        array_merge($this->data, $dataArray);
+        $this->data = $dataArray;
 
-        $result = explode("\n", file_get_contents($file));
-        $settings = array();
+        $this->data['page'] = $page;
 
-        foreach ($result as $item) {
-            if (stristr($item, '$this->'))
-                $settings[] = $item;
-        }
+        $page->setData($this->data);
 
-        unset($result);
+        ob_start();
+        extract($this->data);
+        require $file;
 
-        foreach ($settings as $setting) {
-            if (stristr($setting, 'title')) {
-                preg_match_all('~"([^"]*)"~u', $setting, $matches);
-                $param = $matches[1][0];
-                $this->page->setTitle($param);
-            }
-            if (stristr($setting, 'description')) {
-                preg_match_all('~"([^"]*)"~u', $setting, $matches);
-                $param = $matches[1][0];
-                $this->page->setDescription($param);
-            }
-            if (stristr($setting, 'keywords')) {
-                preg_match_all('~"([^"]*)"~u', $setting, $matches);
-                $param = $matches[1][0];
-                $this->page->setKeywords($param);
-            }
-        }
+        $page->setContent(ob_get_clean());
     }
 
     public function __destruct()
     {
-        if ($this->render) {
-            $this->page->setData($this->data);
-            $this->page->setContent($this->render);
+//        if ($this->render) {
+//            $this->page->setData($this->data);
+//            $this->page->setContent($this->render);
 //            extract($this->data);
 //            include $this->render;
-        }
+//        }
     }
 }
