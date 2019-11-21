@@ -22,22 +22,27 @@ class VerbController implements Controller
         $this->params = $params;
     }
 
-    public function index()
+    public function all()
     {
         $this->component = new VerbsComponent();
         $this->model = $this->component->getAllVerbs();
 
-        $view = new View('site/verbs', $this->page, ['model' => $this->model]);
+        $view = new View('verbs/verbs', $this->page, ['model' => $this->model]);
     }
 
-    public function search()
+    public function irregular()
     {
         $verb = $this->params['verb'];
         $this->component = new VerbsComponent();
 
         if ($this->model = $this->component->getVerb($verb))
-            $view = new View("site/verb", $this->page, ['model' => $this->model]);
+            $view = new View("verbs/irregular", $this->page, ['model' => $this->model]);
         else
             $view = new View("errors/verb", $this->page, ['model' => $this->model]);
+    }
+
+    public function phrasal()
+    {
+        $view = new View("verbs/phrasal", $this->page, ['model' => $this->model]);
     }
 }

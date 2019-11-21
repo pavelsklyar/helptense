@@ -5,7 +5,6 @@
  * @var $model \app\model\Verb;
  */
 
-
 $page->title = ucfirst($model->getFirstForm()) . " - HelpTense";
 $page->description = "HelpTense - сайт, который поможет разобраться в английских временах и узнать формы глаголов.";
 $page->keywords = "неправильные глаголы, английские глаголы";
@@ -14,7 +13,7 @@ $page->keywords = "неправильные глаголы, английские
 
 <div class="content">
     
-    <form action="" method="get">
+    <form action="/search/verb/" method="POST">
             <input name="verb" placeholder="Введите глагол..." type="search">
             <button type="submit"><img class="search" src="/img/search_w.png"></button>
     </form>

@@ -11,8 +11,7 @@ $page->keywords = "неправильные глаголы, английские
 ?>
 
 <div class="signature-main">
-    <p class="sign-a">Быстро поможет с прошедшем
-        временем в настоящем</p>
+    <p class="sign-a">Быстро поможет с прошедшим временем в настоящем</p>
 </div>
 
 <form action="/search/verb/" method="post">

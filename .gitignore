@@ -1,1 +1,4 @@
 .idea/
+config/config_hosting.ini
+public_html/htaccess
+.DS_Store

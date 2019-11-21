@@ -10,7 +10,7 @@ $page->setTitle("Глагол не найден! - HelpTense");
 
 <div class="content">
     
-    <form action="" method="get">
+    <form action="/search/verb/" method="post">
         <input name="verb" placeholder="Введите глагол..." type="search">
         <button type="submit"><img class="search" src="/img/search_w.png"></button>
     </form>

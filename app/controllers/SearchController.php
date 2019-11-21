@@ -25,6 +25,6 @@ class SearchController implements Controller
     public function verb()
     {
         $verb = $this->page->getPost()['verb'];
-        header("Location: /verb/{$verb}/");
+        header("Location: /irregular/{$verb}/");
     }
 }

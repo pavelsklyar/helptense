@@ -30,19 +30,6 @@ class MainController implements Controller
         $view = new View("site/index", $this->page);
     }
 
-    public function search()
-    {
-        $get = $this->page->getGet();
-        $verb = $get['verb'];
-
-        $this->component = new VerbsComponent();
-
-        if ($this->model = $this->component->getVerb($verb))
-            $view = new View("site/verb", $this->page, ['model' => $this->model]);
-        else
-            $view = new View("errors/verb", $this->page, ['model' => $this->model]);
-    }
-
     public function tense()
     {
         $view = new View("site/tense", $this->page);
@@ -52,4 +39,17 @@ class MainController implements Controller
     {
         $view = new View("site/grammar", $this->page);
     }
+
+//    public function search()
+//    {
+//        $get = $this->page->getGet();
+//        $verb = $get['verb'];
+//
+//        $this->component = new VerbsComponent();
+//
+//        if ($this->model = $this->component->getVerb($verb))
+//            $view = new View("site/verb", $this->page, ['model' => $this->model]);
+//        else
+//            $view = new View("errors/verb", $this->page, ['model' => $this->model]);
+//    }
 }
