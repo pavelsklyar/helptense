@@ -1,25 +1,21 @@
 <?php
 
-
 namespace app\controllers;
 
-
-use app\base\interfaces\Controller;
-use app\base\Page;
-use app\base\View;
 use app\components\VerbsComponent;
+use base\controllers\Controller;
+use base\Page;
+use base\View\View;
 
-class VerbController implements Controller
+
+class VerbController extends Controller
 {
-    private $page;
     private $component;
     private $model;
-    private $params;
 
     public function __construct(Page &$page, $params)
     {
-        $this->page = $page;
-        $this->params = $params;
+        parent::__construct($page, $params);
     }
 
     public function all()

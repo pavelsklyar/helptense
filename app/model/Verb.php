@@ -1,13 +1,10 @@
 <?php
 
-
 namespace app\model;
 
+use base\model\Model;
 
-use app\database\tables\VerbsTable;
-use base\interfaces\Model;
-
-class Verb implements Model
+class Verb extends Model
 {
     private $firstForm;
     private $secondForm;

@@ -1,14 +1,12 @@
 <?php
 
-
 namespace app\components;
 
-
-use app\base\interfaces\Component;
-use app\database\tables\VerbsTable;
+use app\database\VerbsTable;
 use app\model\Verb;
+use base\component\Component;
 
-class VerbsComponent implements Component
+class VerbsComponent extends Component
 {
     private $table;
     private $model;
@@ -32,16 +30,6 @@ class VerbsComponent implements Component
                     $v[$key]['transcription']
                 );
             }
-
-//            foreach ($v as $key => $verb) {
-//                $this->model[] = new Verb(
-//                    $verb[$key]['first_form'],
-//                    $verb[$key]['second_form'],
-//                    $verb[$key]['third_form'],
-//                    $verb[$key]['translate'],
-//                    $verb[$key]['transcription']
-//                );
-//            }
         }
         else {
             $this->model = null;

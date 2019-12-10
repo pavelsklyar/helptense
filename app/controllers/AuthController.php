@@ -1,16 +1,14 @@
 <?php
 
-
 namespace app\controllers;
 
+use base\controllers\Controller;
+use base\Page;
 
-use app\base\interfaces\Controller;
-use app\base\Page;
-
-class AuthController implements Controller
+class AuthController extends Controller
 {
-    private $page;
-    private $params;
+    private $component;
+    private $model;
 
     /**
      * Controller constructor.
@@ -19,8 +17,7 @@ class AuthController implements Controller
      */
     public function __construct(Page &$page, $params)
     {
-        $this->page = $page;
-        $this->params = $params;
+        parent::__construct($page, $params);
     }
 
     public function index()

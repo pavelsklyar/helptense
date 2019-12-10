@@ -1,0 +1,5 @@
+{
+  "require": {
+    "errcode/framework": "1.*"
+  }
+}

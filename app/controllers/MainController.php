@@ -2,15 +2,12 @@
 
 namespace app\controllers;
 
-use app\base\interfaces\Controller;
-use app\base\Page;
-use app\base\View;
-use app\components\VerbsComponent;
+use base\controllers\Controller;
+use base\Page;
+use base\View\View;
 
-class MainController implements Controller
+class MainController extends Controller
 {
-    private $page;
-    private $params;
     private $component;
     private $model;
 
@@ -21,8 +18,7 @@ class MainController implements Controller
      */
     public function __construct(Page &$page, $params)
     {
-        $this->page = $page;
-        $this->params = $params;
+        parent::__construct($page, $params);
     }
 
     public function index()

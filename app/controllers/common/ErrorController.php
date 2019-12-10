@@ -2,8 +2,8 @@
 
 namespace app\controllers\common;
 
-use app\base\Page;
-use app\base\View;
+use base\Page;
+use base\View\View;
 
 class ErrorController
 {

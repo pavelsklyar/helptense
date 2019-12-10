@@ -1,12 +1,12 @@
 <?php
 /**
- * @var $routing \base\Routing
+ * @var $routing base\routing\Routing
  */
 
-    require_once "../app/autoload.php";
+require_once "../app/autoload.php";
 
-    $page = new app\base\Page();
-    $app = new \app\App($page, $routing);
+$page = new \base\Page();
+$app = new \base\App($page, $routing);
 
-    $app->run();
-    $page->generate();
+$app->run();
+$page->generate();
