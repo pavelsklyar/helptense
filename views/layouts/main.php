@@ -22,9 +22,9 @@ use base\Page; ?>
     <?php endif; ?>
 </head>
 <body>
-    <div class="body">
+    <div class="main">
         <?php if (Page::checkContent('header')) : ?>
-        <div class="header">
+        <div class="nav">
             <?php include $page->getHeader(); ?>
         </div>
         <?php endif; ?>

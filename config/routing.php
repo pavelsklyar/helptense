@@ -1,6 +1,5 @@
 <?php
 
-use app\controllers\AdminController;
 use app\controllers\AuthController;
 use app\controllers\MainController;
 use app\controllers\SearchController;

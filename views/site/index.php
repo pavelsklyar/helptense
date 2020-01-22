@@ -10,11 +10,12 @@ $page->keywords = "неправильные глаголы, английские
 
 ?>
 
-<div class="signature-main">
-    <p class="sign-a">Быстро поможет с прошедшим временем в настоящем</p>
+<div class="tagline">
+    БЫСТРО ПОМОЖЕТ С ПРОШЕДШИМ ВРЕМЕНЕМ В НАСТОЯЩЕМ
 </div>
-
-<form action="/search/verb/" method="post">
-    <input name="verb" placeholder="Введите глагол..." type="search">
-    <button type="submit"><img class="search" src="/img/search_w.png"></button>
-</form>
+<div class="search">
+    <form action="/search/verb/" method="post">
+        <input class="search-input" placeholder="Введите глагол" type="text" name="verb">
+        <button class="search-submit" type="submit"></button>
+    </form>
+</div>

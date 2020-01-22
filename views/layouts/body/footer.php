@@ -1,4 +1,4 @@
-<div class="footer-content">
-    <p class="author">HelpTense © 2019 </p>
-    <p class="email">Нашли ошибку? Напишите нам: <a href="mailto:help@helptense.ru" class="mail-link" target="_blank">help@helptense.ru</a></p>
+<div class="footer-list">
+    <a href="/">HelpTense 2019©</a>
+    <a href="mailto:help@helptense.ru?subject=Вопрос по HelpTense">Нашли ошибку? Напишите нам: help@helptense.ru</a>
 </div>

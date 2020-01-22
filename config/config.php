@@ -14,18 +14,18 @@ return [
     ],
 
     'styles' => [
-        'main.css',
-        'fonts.css',
-        'media.css'
+        'main.css'
     ],
 
     'scripts' => [
-
+        'jquery.min.js',
+        'click.js'
     ],
 
     'favicon' => 'favicon.ico',
 
     'errors' => [
-        404 => 'errors/404'
+        404 => 'errors/404',
+        'access' => ''
     ],
 ];
