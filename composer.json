@@ -1,5 +1,5 @@
 {
   "require": {
-    "errcode/framework": "1.*"
+    "errcode/framework": "dev-master"
   }
 }

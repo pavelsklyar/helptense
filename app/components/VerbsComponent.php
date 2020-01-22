@@ -40,7 +40,7 @@ class VerbsComponent extends Component
 
     public function getVerb($verb)
     {
-        $v = $this->table->getByCondition('first_form', $verb);
+        $v = $this->table->get('*', ['first_form' => $verb]);
 
         if ($v) {
             $this->model = new Verb(

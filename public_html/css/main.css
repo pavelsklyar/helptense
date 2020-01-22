@@ -338,3 +338,16 @@ form button {
 .mail-link {
     color: #f0f1ef;
 }
+
+
+
+
+
+.tableLog {
+    border-collapse: collapse;
+}
+
+.tdLog {
+    padding: 5px;
+    border: 1px solid black;
+}

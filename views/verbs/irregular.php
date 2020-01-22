@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @var $page \app\base\Page;
+ * @var $page \base\Page;
  * @var $model \app\model\Verb;
  */
 

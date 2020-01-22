@@ -6,52 +6,52 @@ use base\model\Model;
 
 class Verb extends Model
 {
-    private $firstForm;
-    private $secondForm;
-    private $thirdForm;
-    private $translate;
-    private $transcription;
+    public $first_form;
+    public $second_form;
+    public $third_form;
+    public $translate;
+    public $transcription;
 
-    private $firstFormExampleSingle;
-    private $firstFormExampleMultiple;
-    private $firstFormExampleNegative;
+    public $first_form_example_single;
+    public $first_form_example_multiple;
+    public $first_form_example_negative;
 
-    private $secondFormExampleSingle;
-    private $secondFormExampleMultiple;
-    private $secondFormExampleNegative;
+    public $second_form_example_single;
+    public $second_form_example_multiple;
+    public $second_form_example_negative;
 
-    private $thirdFormExampleSingle;
-    private $thirdFormExampleMultiple;
-    private $thirdFormExampleNegative;
+    public $third_form_example_single;
+    public $third_form_example_multiple;
+    public $third_form_example_negative;
 
     /**
      * Verb constructor.
-     * @param $firstForm
-     * @param $secondForm
-     * @param $thirdForm
+     * @param $first_form
+     * @param $second_form
+     * @param $third_form
      * @param $translate
      * @param $transcription
      */
-    public function __construct($firstForm, $secondForm, $thirdForm, $translate, $transcription)
+    public function __construct($first_form, $second_form, $third_form, $translate, $transcription)
     {
-        $this->firstForm = $firstForm;
-        $this->secondForm = $secondForm;
-        $this->thirdForm = $thirdForm;
+        $this->first_form = $first_form;
+        $this->second_form = $second_form;
+        $this->third_form = $third_form;
         $this->translate = $translate;
         $this->transcription = $transcription;
     }
 
-    public function setExamples($firstFormExampleSingle, $firstFormExampleMultiple, $firstFormExampleNegative, $secondFormExampleSingle, $secondFormExampleMultiple, $secondFormExampleNegative, $thirdFormExampleSingle, $thirdFormExampleMultiple, $thirdFormExampleNegative)
+    public function setExamples($first_form_example_single, $first_form_example_multiple, $first_form_example_negative, $second_form_example_single, $second_form_example_multiple, $second_form_example_negative, $third_form_example_single, $third_form_example_multiple, $third_form_example_negative)
     {
-        $this->firstFormExampleSingle = $firstFormExampleSingle;
-        $this->firstFormExampleMultiple = $firstFormExampleMultiple;
-        $this->firstFormExampleNegative = $firstFormExampleNegative;
-        $this->secondFormExampleSingle = $secondFormExampleSingle;
-        $this->secondFormExampleMultiple = $secondFormExampleMultiple;
-        $this->secondFormExampleNegative = $secondFormExampleNegative;
-        $this->thirdFormExampleSingle = $thirdFormExampleSingle;
-        $this->thirdFormExampleMultiple = $thirdFormExampleMultiple;
-        $this->thirdFormExampleNegative = $thirdFormExampleNegative;
+        $this->first_form_example_single = $first_form_example_single;
+        $this->first_form_example_multiple = $first_form_example_multiple;
+        $this->first_form_example_negative = $first_form_example_negative;
+        $this->second_form_example_single = $second_form_example_single;
+        $this->second_form_example_multiple = $second_form_example_multiple;
+        $this->second_form_example_negative = $second_form_example_negative;
+        $this->third_form_example_single = $third_form_example_single;
+        $this->third_form_example_multiple = $third_form_example_multiple;
+        $this->third_form_example_negative = $third_form_example_negative;
     }
 
     /**
@@ -59,7 +59,7 @@ class Verb extends Model
      */
     public function getFirstForm()
     {
-        return $this->firstForm;
+        return $this->first_form;
     }
 
     /**
@@ -67,7 +67,7 @@ class Verb extends Model
      */
     public function getSecondForm()
     {
-        return $this->secondForm;
+        return $this->second_form;
     }
 
     /**
@@ -75,7 +75,7 @@ class Verb extends Model
      */
     public function getThirdForm()
     {
-        return $this->thirdForm;
+        return $this->third_form;
     }
 
     /**
@@ -99,7 +99,7 @@ class Verb extends Model
      */
     public function getFirstFormExampleSingle()
     {
-        return $this->firstFormExampleSingle;
+        return $this->first_form_example_single;
     }
 
     /**
@@ -107,7 +107,7 @@ class Verb extends Model
      */
     public function getFirstFormExampleMultiple()
     {
-        return $this->firstFormExampleMultiple;
+        return $this->first_form_example_multiple;
     }
 
     /**
@@ -115,7 +115,7 @@ class Verb extends Model
      */
     public function getFirstFormExampleNegative()
     {
-        return $this->firstFormExampleNegative;
+        return $this->first_form_example_negative;
     }
 
     /**
@@ -123,7 +123,7 @@ class Verb extends Model
      */
     public function getSecondFormExampleSingle()
     {
-        return $this->secondFormExampleSingle;
+        return $this->second_form_example_single;
     }
 
     /**
@@ -131,7 +131,7 @@ class Verb extends Model
      */
     public function getSecondFormExampleMultiple()
     {
-        return $this->secondFormExampleMultiple;
+        return $this->second_form_example_multiple;
     }
 
     /**
@@ -139,7 +139,7 @@ class Verb extends Model
      */
     public function getSecondFormExampleNegative()
     {
-        return $this->secondFormExampleNegative;
+        return $this->second_form_example_negative;
     }
 
     /**
@@ -147,7 +147,7 @@ class Verb extends Model
      */
     public function getThirdFormExampleSingle()
     {
-        return $this->thirdFormExampleSingle;
+        return $this->third_form_example_single;
     }
 
     /**
@@ -155,7 +155,7 @@ class Verb extends Model
      */
     public function getThirdFormExampleMultiple()
     {
-        return $this->thirdFormExampleMultiple;
+        return $this->third_form_example_multiple;
     }
 
     /**
@@ -163,18 +163,6 @@ class Verb extends Model
      */
     public function getThirdFormExampleNegative()
     {
-        return $this->thirdFormExampleNegative;
-    }
-
-    /**
-     * @param $postData
-     * @return Verb
-     */
-    public static function load($postData)
-    {
-        $obj = new self();
-        // ...
-
-        return $obj;
+        return $this->third_form_example_negative;
     }
 }

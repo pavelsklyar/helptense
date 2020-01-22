@@ -1,5 +1,5 @@
 .idea/
 vendor/
-config/config_hosting.ini
+config/config_hosting.php
 public_html/htaccess
 .DS_Store
