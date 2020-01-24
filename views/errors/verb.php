@@ -1,19 +1,21 @@
 <?php
 
 /**
- * @var $page \app\base\Page;
+ * @var $page base\Page;
  */
 
-$page->setTitle("Глагол не найден! - HelpTense");
+$page->title = ("Глагол не найден! - HelpTense");
 
 ?>
 
 <div class="content">
-    
-    <form action="/search/verb/" method="post">
-        <input name="verb" placeholder="Введите глагол..." type="search">
-        <button type="submit"><img class="search" src="/img/search_w.png"></button>
-    </form>
+
+    <div class="search">
+        <form action="/search/verb/" method="post">
+            <input class="search-input" placeholder="Введите глагол" type="text" name="verb">
+            <button class="search-submit" type="submit"></button>
+        </form>
+    </div>
 
     <div align="center" class="sign-verb">
         <p class="sign-p-not-up">глагол не найден</p>
