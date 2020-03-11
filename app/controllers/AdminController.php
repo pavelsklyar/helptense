@@ -4,13 +4,13 @@
 namespace app\controllers;
 
 
+use app\base\BaseController;
 use app\components\AuthComponent;
 use app\components\LogComponent;
-use base\controllers\Controller;
 use base\Page;
 use base\View\View;
 
-class AdminController extends Controller
+class AdminController extends BaseController
 {
     private $component;
 

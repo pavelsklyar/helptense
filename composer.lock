@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ErrCodeRussia/framework.git",
-                "reference": "cc4df621aa59ea24f752d4f59c29eeb9f59b0870"
+                "reference": "825086d3a224511d247636dc8f7c71e4d1997bf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ErrCodeRussia/framework/zipball/cc4df621aa59ea24f752d4f59c29eeb9f59b0870",
-                "reference": "cc4df621aa59ea24f752d4f59c29eeb9f59b0870",
+                "url": "https://api.github.com/repos/ErrCodeRussia/framework/zipball/825086d3a224511d247636dc8f7c71e4d1997bf7",
+                "reference": "825086d3a224511d247636dc8f7c71e4d1997bf7",
                 "shasum": ""
             },
             "require": {
@@ -42,7 +42,7 @@
                 }
             ],
             "description": "The ErrCode Framework",
-            "time": "2020-01-14T09:15:11+00:00"
+            "time": "2020-03-04T07:30:01+00:00"
         }
     ],
     "packages-dev": [],

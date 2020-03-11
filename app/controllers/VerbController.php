@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 
+use app\base\BaseController;
 use app\components\VerbsComponent;
-use base\controllers\Controller;
 use base\Page;
 use base\View\View;
 
 
-class VerbController extends Controller
+class VerbController extends BaseController
 {
     private $component;
     private $model;
@@ -32,13 +32,13 @@ class VerbController extends Controller
         $this->component = new VerbsComponent();
 
         if ($this->model = $this->component->getVerb($verb))
-            $view = new View("verbs/irregular", $this->page, ['model' => $this->model]);
+            new View("verbs/irregular", $this->page, ['model' => $this->model]);
         else
-            $view = new View("errors/verb", $this->page, ['model' => $this->model]);
+            new View("errors/verb", $this->page, ['model' => $this->model]);
     }
 
     public function phrasal()
     {
-        $view = new View("verbs/phrasal", $this->page, ['model' => $this->model]);
+        new View("verbs/phrasal", $this->page, ['model' => $this->model]);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use base\controllers\Controller;
+use app\base\BaseController;
 use base\Page;
 
-class AuthController extends Controller
+class AuthController extends BaseController
 {
     private $component;
     private $model;

@@ -1,21 +1,27 @@
 <?php
 
-use base\connector\Connector;
-
-define('HOME', $_SERVER['DOCUMENT_ROOT'] . '/');
-define('ROOT', HOME . '../');
+define('APP', __DIR__ . '/');
+define('ROOT', APP . '../');
 define('VENDOR', ROOT . 'vendor/');
+define('HOME', ROOT . 'public_html/');
 define('CONFIG', ROOT . 'config/');
-define('APP', ROOT . 'app/');
+define('LOGS', ROOT . 'logs/');
 define('VIEWS', ROOT . 'views/');
 define('LAYOUTS', VIEWS . 'layouts/');
-define('COMMON_LAYOUTS', LAYOUTS . 'common/');
 
 require_once VENDOR . 'autoload.php';
-
-Connector::requireFolder(APP . "components");
-Connector::requireFolder(APP . "controllers");
-Connector::requireFolder(APP . "database");
-Connector::requireFolder(APP . "model");
-
 require_once CONFIG . "routing.php";
+
+spl_autoload_register(function($name) {
+    $params = explode("\\", $name );
+
+    $path = dirname(__DIR__);
+    for($i=0; $i< count($params)-1; $i++){
+        $path .= "/" .  $params[$i];
+    }
+    $filename = $path . "/" . $params[count($params)-1] . ".php";
+
+    if(file_exists($filename)){
+        require_once $filename;
+    }
+});

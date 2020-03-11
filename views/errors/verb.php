@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @var $page \app\base\Page;
+ * @var $page base\Page;
  */
 
-$page->setTitle("Глагол не найден! - HelpTense");
+$page->title = "Глагол не найден! - HelpTense";
 
 ?>
 

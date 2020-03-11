@@ -1,6 +1,5 @@
 <?php
 
-use app\controllers\AdminController;
 use app\controllers\AuthController;
 use app\controllers\MainController;
 use app\controllers\SearchController;
@@ -21,3 +20,8 @@ $routing->add('GET', '/phrasal/{verb}/', VerbController::class, 'phrasal');
 $routing->add("GET", '/auth/', AuthController::class, 'index');
 $routing->add('POST', '/auth/login/', AuthController::class, 'login');
 $routing->add('POST', '/auth/register/', AuthController::class, 'register');
+
+$routing->add("GET", "/profile/", \app\controllers\UsersController::class, "profile", true);
+
+$routing->add("GET", "/live/", MainController::class, "live");
+$routing->add("POST", "/live/search/", MainController::class, "liveSearch");

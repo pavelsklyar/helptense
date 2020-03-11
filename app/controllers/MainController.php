@@ -2,11 +2,12 @@
 
 namespace app\controllers;
 
-use base\controllers\Controller;
+use app\base\BaseController;
+use app\database\VerbsTable;
 use base\Page;
 use base\View\View;
 
-class MainController extends Controller
+class MainController extends BaseController
 {
     private $component;
     private $model;
@@ -34,6 +35,23 @@ class MainController extends Controller
     public function grammar()
     {
         $view = new View("site/grammar", $this->page);
+    }
+
+    public function live()
+    {
+        $view = new View("site/live", $this->page);
+    }
+
+    public function liveSearch()
+    {
+        $post = $this->page->getPost();
+        $table = new VerbsTable();
+
+        $res = $table->search($post['search']);
+
+        if ($res) {
+
+        }
     }
 
 //    public function search()
