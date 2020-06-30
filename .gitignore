@@ -3,3 +3,4 @@ vendor/
 config/config_hosting.php
 public_html/htaccess
 .DS_Store
+config/dblocal.php
