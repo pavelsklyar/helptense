@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var $result = $('#search_box-result');
+    var result = $('#search_box-result');
 
     $('#search').on('keyup', function(){
 
@@ -16,25 +16,32 @@ $(document).ready(function() {
                 type: "POST",
                 url: "/verbs",
                 data: {'search': search},
-                success: function(msg){
-                    $result.html(msg);
-                    if(msg != ''){
-                        $result.fadeIn();
+                headers: {
+                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response){
+                    console.log(response);
+                    result.html(response);
+                    if(response != ''){
+                        result.fadeIn();
                     } else {
-                        $result.fadeOut(100);
+                        result.fadeOut(100);
                     }
+                },
+                error: function (msg) {
+                    console.log(msg);
                 }
             });
         } else {
-            $result.html('');
-            $result.fadeOut(100);
+            result.html('');
+            result.fadeOut(100);
         }
     });
 
     $(document).on('click', function(e){
         if (!$(e.target).closest('.search_box').length){
-            $result.html('');
-            $result.fadeOut(100);
+            result.html('');
+            result.fadeOut(100);
         }
     });
 });

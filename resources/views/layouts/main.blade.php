@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/media.css">
@@ -19,7 +21,7 @@
 <body>
     <div class="body">
         <div class="header">
-            @include("elements.header");
+            @include("elements.header")
         </div>
 
         <div class="content">

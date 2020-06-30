@@ -21,7 +21,7 @@ Route::get('/grammar', 'HomeController@grammar')->name('grammar');
 Route::get("/verbs", "VerbController@all")->name("verbs");
 Route::get("/irregular/{verb}", "VerbController@irregular")->name("irregular");
 Route::get("/phrasal/{verb}", "VerbController@phrasal")->name("phrasal");
-Route::post("/verbs", "VerbController@lifeSearch")->name("lifeSearch");
+Route::post("/verbs", "VerbController@liveSearch")->name("lifeSearch");
 
 Route::group(['middleware' => "auth"], function () {
     Route::get("/profile", "ProfileController@index")->name("profile");
