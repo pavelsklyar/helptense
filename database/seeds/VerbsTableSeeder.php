@@ -68,7 +68,17 @@ class VerbsTableSeeder extends Seeder
         DB::table('verbs')->insert(['first_form' => 'deal', 'second_form' => 'dealt', 'third_form' => 'dealt', 'translate' => 'иметь дело']);
         DB::table('verbs')->insert(['first_form' => 'dig', 'second_form' => 'dug', 'third_form' => 'dug', 'translate' => 'копать']);
         DB::table('verbs')->insert(['first_form' => 'dive', 'second_form' => 'dived; dove', 'third_form' => 'dived', 'translate' => 'нырять; погружаться']);
-        DB::table('verbs')->insert(['first_form' => 'do', 'second_form' => 'did', 'third_form' => 'done', 'translate' => 'делать']);
+        DB::table('verbs')->insert(['first_form' => 'do', 'second_form' => 'did', 'third_form' => 'done', 'translate' => 'делать', 'transcription' => "du:",
+            'first_form_example_single' => "He does exercises every morning",
+            'first_form_example_multiple' => "We usually do our homework",
+            'first_form_example_negative' => "She doesn't do a job every day",
+            'second_form_example_single' => "He did exercises yesterday morning",
+            'second_form_example_multiple' => "We did our homework last weekend",
+            'second_form_example_negative' => "She didn't do a job last month",
+            'third_form_example_single' => "He has already done exercises",
+            'third_form_example_multiple' => "We have already done our homework yet",
+            'third_form_example_negative' => "She hasn't already done a job"
+            ]);
         DB::table('verbs')->insert(['first_form' => 'draw', 'second_form' => 'drew', 'third_form' => 'drawn', 'translate' => 'тащить; рисовать']);
         DB::table('verbs')->insert(['first_form' => 'dream', 'second_form' => 'dreamt; dreamed', 'third_form' => 'dreamt; dreamed', 'translate' => 'грезить; мечтать']);
         DB::table('verbs')->insert(['first_form' => 'drink', 'second_form' => 'drank', 'third_form' => 'drunk', 'translate' => 'пить; выпить']);

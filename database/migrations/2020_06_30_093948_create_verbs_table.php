@@ -22,17 +22,17 @@ class CreateVerbsTable extends Migration
             $table->string("translate", 45);
             $table->string("transcription", 45)->nullable();
 
-            $table->text("first-form-example-single")->nullable();
-            $table->text("first-form-example-multiple")->nullable();
-            $table->text("first-form-example-negative")->nullable();
+            $table->text("first_form_example_single")->nullable();
+            $table->text("first_form_example_multiple")->nullable();
+            $table->text("first_form_example_negative")->nullable();
 
-            $table->text("second-form-example-single")->nullable();
-            $table->text("second-form-example-multiple")->nullable();
-            $table->text("second-form-example-negative")->nullable();
+            $table->text("second_form-example_single")->nullable();
+            $table->text("second_form-example_multiple")->nullable();
+            $table->text("second_form-example_negative")->nullable();
 
-            $table->text("third-form-example-single")->nullable();
-            $table->text("third-form-example-multiple")->nullable();
-            $table->text("third-form-example-negative")->nullable();
+            $table->text("third_form_example_single")->nullable();
+            $table->text("third_form_example_multiple")->nullable();
+            $table->text("third_form_example_negative")->nullable();
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp("updated_at")->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

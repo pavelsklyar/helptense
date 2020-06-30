@@ -9,7 +9,9 @@ class VerbController extends Controller
 {
     public function irregular($verb)
     {
+        $verb = Verb::where("first_form", $verb)->first();
 
+        return view("irregular.verb", ['verb' => $verb]);
     }
 
     public function phrasal($verb)
