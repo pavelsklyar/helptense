@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/tense', 'HomeController@tense')->name('tense');
+Route::get('/grammar', 'HomeController@grammar')->name('grammar');
+
+Route::get("/verbs", "VerbController@all")->name("verbs");
+Route::get("/irregular/{verb}", "VerbController@irregular")->name("irregular");
+Route::get("/phrasal/{verb}", "VerbController@phrasal")->name("phrasal");
+Route::post("/verbs", "VerbController@lifeSearch")->name("lifeSearch");
+
+Route::group(['middleware' => "auth"], function () {
+    Route::get("/profile", "ProfileController@index")->name("profile");
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['verify' => true]);

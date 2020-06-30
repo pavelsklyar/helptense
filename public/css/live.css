@@ -1,0 +1,48 @@
+.search_box {
+    position: relative;
+}
+
+.search_box input[type="text"] {
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #fd4836;
+    outline: none;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    text-indent: 15px;
+    font-size: 14px;
+    color: #222;
+}
+
+.search_box input[type="submit"] {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    overflow: hidden;
+    text-indent: -999px;
+    background: url(https://snipp.ru/demo/127/search.png) 0 0 no-repeat;
+    position: absolute;
+    top: 9px;
+    right: 16px;
+}
+
+/* Стили для плашки с результатами */
+.search_result {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 10px;
+    z-index: 9999;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
