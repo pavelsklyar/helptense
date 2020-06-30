@@ -1,8 +1,8 @@
 @extends("layouts.main")
 
 @section("title", "Глагол " . strtoupper($verb->first_form))
-@section("description", "Три формы неправильного глагола " . strtoupper($verb->first_form) . " с примерами на каждую форму.")
-@section("keywords", "глагол, " . strtoupper($verb->first_form) . ", нерпавильный глагол, английский язык")
+@section("description", "Три формы неправильного глагола " . $verb->first_form . " (" . $verb->translate .") с примерами на каждую форму.")
+@section("keywords", "глагол, " . $verb->first_form . ", нерпавильный глагол, английский язык")
 
 @section("content")
     <div class="content">
