@@ -4,11 +4,11 @@
 /* Стили для плашки с результатами */
 .search_result {
     position: absolute;
-    width: 280px;
+    width: 682px;
     top: 100%;
-    left: calc(50% - 150px);
+    left: calc(50% - 341px);
     /*border: 1px solid #ddd;*/
-    background: #f0f1ef;
+    background: rgba(0, 0, 0, 0.4);
     padding: 10px;
     z-index: 9999;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
