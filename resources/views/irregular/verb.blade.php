@@ -15,6 +15,12 @@
             <div id="search_box-result"></div>
         </div>
 
+        @if ($favourite !== null)
+        <div>
+            <button onclick="favourites({{ auth()->id() }}, {{ $verb->id }})">{{ ($favourite) ? "Добавить в избранное" : "Убрать из избранного" }}</button>
+        </div>
+        @endif
+
         <div align="center" class="sign-verb">
             <a class="sign-a">{{ $verb->first_form }}</a>
             <p class="sign-p">[{{ ($verb->transcription) ? $verb->transcription : "..." }}], {{ $verb->translate }}</p>

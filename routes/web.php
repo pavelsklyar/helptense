@@ -23,8 +23,11 @@ Route::get("/irregular/{verb}", "VerbController@irregular")->name("irregular");
 Route::get("/phrasal/{verb}", "VerbController@phrasal")->name("phrasal");
 Route::post("/verbs", "VerbController@liveSearch")->name("lifeSearch");
 
+Route::post("/verbs/favourite", "VerbController@favourite");
+
 Route::group(['middleware' => "auth"], function () {
     Route::get("/profile", "ProfileController@index")->name("profile");
+    Route::get("/profile/favourites", "ProfileController@favourites")->name("favourites");
 });
 
 Auth::routes(['verify' => true]);
