@@ -46,13 +46,13 @@ class VerbController extends Controller
         foreach ($verbs as $verb) {
             $item = $verb->first_form;
 
-            $bold = "<b class='verbs'>" . $search . "</b>";
+            $bold = "<b class='search_verbs'>" . $search . "</b>";
             $boldVerb = str_replace($search, $bold, $item);
 
             $str .= "
                 <tr>
                     <td class='search_result-name'>
-                        <a class='verbs' href='#' onclick='enter(\"$item\")'>$boldVerb</a>
+                        <a class='search_verbs' href='#' onclick='enter(\"$item\")'>$boldVerb</a>
                     </td>
                 </tr>
                 ";
