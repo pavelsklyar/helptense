@@ -10,9 +10,9 @@
             <li class="menu-desktop-li">
                 <a href="{{ route("home") }}" class="menu-a">Неправильные глаголы</a>
             </li>
-            <li class="menu-desktop-li">
+            <!-- <li class="menu-desktop-li">
                 <a href="" class="menu-a">Фразовые глаголы</a>
-            </li>
+            </li> -->
             <li class="menu-desktop-li">
                 <a href="{{ route("tense") }}" class="menu-a">Таблица времен</a>
             </li>
@@ -21,8 +21,19 @@
             </li>
 
             @if (\Illuminate\Support\Facades\Auth::check())
-                <li class="menu-desktop-li">
-                    <a href="{{ route("profile") }}" class="menu-a">Профиль</a>
+                <li class="menu-desktop-li menu-li-dropdown">
+                    <a href="{{ route("profile") }}" class="profile">Профиль</a>
+                    <ul class="dropdown-content">
+                        <li>
+                            <a href="">Избранное</a>
+                        </li>
+                        <li>
+                            <a href="">Настройки</a>
+                        </li>
+                        <li>
+                            <a href="">Выйти</a>
+                        </li>
+                    </ul>
                 </li>
             @else
                 <li class="menu-desktop-li">

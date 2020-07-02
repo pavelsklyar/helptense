@@ -4,14 +4,14 @@
 /* Стили для плашки с результатами */
 .search_result {
     position: absolute;
-   
     width: 682px;
     left: calc(50% - 341px);
     background: rgba(0, 0, 0, 0.4);
-   
     padding: 10px;
     z-index: 9999;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin-top: 5px;
+    border-radius: 3px;
 }
 .search_result table {
     border-collapse: collapse;
@@ -41,11 +41,11 @@
     padding: 5px;
 }
 
-a.verbs {
-    color: #5276a4;
+a.search_verbs {
+    color: #9E9C9C;
     text-decoration: none;
 }
 
-b.verbs {
-    color: blue;
+b.search_verbs {
+    color: white;
 }

@@ -8,7 +8,7 @@
         
     <table class="table-tense">
         <tr>
-            <td>Формы\Времена</th>
+            <th>Формы\Времена</th>
             <th>Present</th>
             <th>Past</th>
             <th>Future</th>

@@ -5,10 +5,14 @@
 @section("content")
 
     @if (!empty($favourites))
-        <ul>
+
+        <div class="signature">
+            <p class="sign-two">Избранное</p>
+        </div>
+        <ul class="favourite-verbs">
             @foreach($favourites as $favourite)
-                <li>
-                    <a href="{{ route('irregular', $favourite->first_form) }}">
+                <li class="favourite-list">
+                    <a class="favourite-verb" href="{{ route('irregular', $favourite->first_form) }}">
                     {{ $favourite->first_form }}
                     </a>
                 </li>
