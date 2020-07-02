@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany("App\Model\Role");
     }
+
+    public function verbs()
+    {
+        return $this->belongsToMany("App\Model\Verb", 'favourite_verbs');
+    }
 }

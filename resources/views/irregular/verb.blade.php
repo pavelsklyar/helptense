@@ -1,6 +1,8 @@
 @extends("layouts.main")
 
 @section("title", "Глагол " . strtoupper($verb->first_form))
+@section("description", "Три формы неправильного глагола " . $verb->first_form . " (" . $verb->translate .") с примерами на каждую форму.")
+@section("keywords", "глагол, " . $verb->first_form . ", нерпавильный глагол, английский язык")
 
 @section("content")
     <div class="content">
@@ -12,6 +14,12 @@
             </form>
             <div id="search_box-result"></div>
         </div>
+
+        @if ($favourite !== null)
+        <div>
+            <button onclick="favourites({{ auth()->id() }}, {{ $verb->id }})">{{ ($favourite) ? "Добавить в избранное" : "Убрать из избранного" }}</button>
+        </div>
+        @endif
 
         <div align="center" class="sign-verb">
             <a class="sign-a">{{ $verb->first_form }}</a>

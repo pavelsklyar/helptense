@@ -1,5 +1,5 @@
 <div class="main">
-    <a href="{{ route("home") }}"> 
+    <a href="{{ route("home") }}">
         <div class="logo">
             <h1 class="color_white">Help</h1>
             <h1 class="color_red">Tense</h1>
@@ -19,6 +19,16 @@
             <li class="menu-desktop-li">
                 <a href="{{ route("grammar") }}" class="menu-a">Основы грамматики</a>
             </li>
+
+            @if (\Illuminate\Support\Facades\Auth::check())
+                <li class="menu-desktop-li">
+                    <a href="{{ route("profile") }}" class="menu-a">Профиль</a>
+                </li>
+            @else
+                <li class="menu-desktop-li">
+                    <a href="{{ route("login") }}" class="menu-a">Войти</a>
+                </li>
+            @endif
             <!-- <li class="menu-mobile">
                 <a href="" class="menu-a">Меню</a>
                 <ul class="dropdown">
