@@ -22,16 +22,19 @@
 
             @if (\Illuminate\Support\Facades\Auth::check())
                 <li class="menu-desktop-li menu-li-dropdown">
-                    <a href="{{ route("profile") }}" class="profile">Профиль</a>
+                    <a href="" class="profile">Профиль</a>
                     <ul class="dropdown-content">
                         <li>
-                            <a href="">Избранное</a>
+                            <a href="{{ route("favourites") }}">Избранное</a>
                         </li>
                         <li>
-                            <a href="">Настройки</a>
+                            <a href="{{ route("settings") }}">Настройки</a>
                         </li>
                         <li>
-                            <a href="">Выйти</a>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выйти</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </li>

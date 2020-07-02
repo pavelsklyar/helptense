@@ -28,6 +28,8 @@ Route::post("/verbs/favourite", "VerbController@favourite");
 Route::group(['middleware' => "auth"], function () {
     Route::get("/profile", "ProfileController@index")->name("profile");
     Route::get("/settings", "ProfileController@settings")->name("settings");
+    Route::get("/settings/edit", "ProfileController@edit")->name("edit");
+    Route::post("/settings/edit", "ProfileController@update");
     Route::get("/profile/favourites", "ProfileController@favourites")->name("favourites");
 });
 

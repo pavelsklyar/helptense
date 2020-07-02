@@ -15,7 +15,10 @@ class VerbController extends Controller
         $verb = Verb::where("first_form", $verb)->first();
 
         if (Auth::check()) {
-            $favourite = FavouriteVerb::where('user_id', Auth::id())->get();
+            $favourite = FavouriteVerb::where([
+                ['user_id', Auth::id()],
+                ['verb_id', $verb->id]
+            ])->get();
 
             if ($favourite->count()) {
                 $favourite = false;
